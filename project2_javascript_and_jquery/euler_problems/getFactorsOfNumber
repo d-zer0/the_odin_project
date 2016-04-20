@@ -1,0 +1,14 @@
+// Get factors
+
+var factors = [];
+
+var getFactors = function (number) {
+    for (i = 1; i <= number; i++) {
+        if (number % i === 0) {
+            factors.push(i);
+        }
+    }
+};
+
+getFactors(100);
+console.log(factors);

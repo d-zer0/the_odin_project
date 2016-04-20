@@ -1,0 +1,59 @@
+// Prime number test
+
+var isPrime = false;
+
+var testPrime = function(number) {
+  for (i = 2; i < 10000; i++) {
+    if (number % i === 0) {
+      console.log(number + " is not a prime number.");
+      isPrime = false;
+      return;
+    } else {
+      console.log(number + " is a prime number.");
+      isPrime = true;
+      return;
+    }
+  }
+};
+
+// Get factors other than self
+
+var factors = [];
+
+var getFactors = function(number) {
+  for (i = 1; i < number; i++) {
+    if (number % i === 0) {
+      factors.push(i);
+    }
+  }
+};
+
+// get highest factor other than self
+var primeAndFactors = function (number) {
+    testPrime(number);
+    getFactors(number);
+    highestFactor = (factors[(factors.length)-1]);
+    console.log(highestFactor);
+};
+
+primeAndFactors(1000);
+console.log("'highestFactor' is " + highestFactor);
+
+/* INFINITE LOOP START
+
+// test if factors are prime
+var isFactorPrime = function() {
+    for (i = 0; i <= factors.length; i++) {
+    testPrime(factors[i]);
+    i++;
+    if (isPrime === true) {
+        console.log(factors[i] + " is prime.");
+    } else {
+        console.log(factors[i] + " is not prime.");
+    }
+    }
+};
+
+INFITE LOOP END */
+
+isFactorPrime();

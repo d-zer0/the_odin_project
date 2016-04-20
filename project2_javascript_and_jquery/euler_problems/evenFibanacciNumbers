@@ -1,0 +1,17 @@
+var total = 0;
+var a = 1;
+var b = 2;
+var c = 0;
+var max = 4000000;
+
+var getEvenFibonacciNumbers = function () {
+  while (total < max) {
+    c = a + b;
+    if (c % 2 === 0) {
+      total += c;
+    }
+    a = b;
+    b = c;
+  }
+  console.log(total);
+};
